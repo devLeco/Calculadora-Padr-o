@@ -1,0 +1,61 @@
+ <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>4.Operações matemáticas</title>
+	<meta charset="UTF-8">
+	<script>
+	function resultado(){
+	let a = Number(document.getElementById("a").value);
+	let b = Number(document.getElementById("b").value);
+	document.getElementById("resultado").innerHTML ="a + b = " + selectOperador(a,b);
+	console.log(a,b);
+	}
+	function selectOperador(a,b){
+		let soma=0;
+	switch(document.getElementById("operadores").value){
+		case "1":
+		soma = a + b;
+		break;
+		case "2":
+		soma=a-b;
+		break;
+		case "3":
+		soma=a*b;
+		break;
+		case "4":
+		soma=a/b;
+		break;
+	}
+		return soma;
+	}
+	</script>
+</head>
+	<body>
+		<h1>Operações</h1>
+		<!--
+		soma => +
+		diferença => -
+		multiplicação => *
+		divisão => /
+		resto/módulo => %
+		-->
+		<form>
+		<p>Entre com o primeiro valor</p>
+		<input type="number" id="a"><br>
+		<p>Entre com o segundo valor</p>
+		<input type="number" id="b"><br>
+		<p>Escolha uma operação</p>
+		        <select id="operadores" onchange="selectOperador()"> 
+	                <option value="1" id="1">+</option> 
+	                <option value="2" id="2">-</option> 
+	                <option value="3" id="3">*</option> 
+	                <option value="4" id="4">/</option>
+	            </select>
+	            <br>
+			<button type="button" onClick="resultado()">
+			Calcular
+			</button>
+		</form>
+		<h2 id="resultado"></h2>
+	</body>
+</html>
